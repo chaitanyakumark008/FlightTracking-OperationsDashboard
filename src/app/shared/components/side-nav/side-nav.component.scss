@@ -1,0 +1,19 @@
+@import "../../../../variable";
+.rightpart{
+    display: flex;
+    align-items: center;
+}
+.user{
+    display: flex;
+    align-items: center;
+    border: dashed 1px $primarycolor;
+    padding: 0px 15px;
+    border-radius: 6px;
+    height: 28px;
+    color: $primarycolor;
+    margin-right: 15px;
+}
+.user span{
+    font-size: 14px;
+    margin-left: 10px;
+}
