@@ -1,4 +1,615 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "./variable";
+// @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variablecopy";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.mat-drawer-side {
+  background: $white-color;
+
+  span {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    font-size: 13px;
+  }
+
+  mat-icon {
+    color: #000000;
+    margin-right: 10px;
+  }
+
+  .mat-expansion-panel-header {
+    padding: 0px 16px;
+  }
+
+  .mat-expansion-panel {
+    background: $white-color;
+  }
+
+  .mat-expansion-indicator::after {
+    color: #000000;
+  }
+
+  .mat-expansion-panel-body {
+    background: darken($white-color, 5%);
+    padding: 0 5px 0px;
+  }
+}
+
+.mat-toolbar {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 10px #9d9d9d;
+  box-shadow: 0px 0px 10px #9d9d9d;
+  height: 44px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.logo {
+  padding: 8px 6px 7px 10px;
+  border-bottom: solid 1px #e9e7e7;
+
+  /* text-align: center; */
+  .img {
+
+    img {
+      width: 94px;
+    }
+  }
+
+  span {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+  }
+}
+
+
+//dialog
+.max-w {
+  width: 900px;
+  margin-bottom: 15px;
+  overflow: auto;
+}
+
+.dialog {
+  min-width: 400px;
+}
+
+.dialog .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 5px 15px;
+  background: $primarycolor;
+  color: $white-color;
+}
+
+.dialog .head h3 {
+  margin: 0px;
+}
+
+.dialog .head mat-icon {
+  cursor: pointer;
+}
+
+.dialog .example-card {
+  padding: 15px;
+  max-height: 70vh;
+  overflow: auto;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.dialog .example-card mat-card-title {
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  color: $primarycolor;
+  font-size: 18px;
+}
+
+.dialog .example-card mat-card-subtitle {
+  border-top: dashed 1px #a5a5a5;
+  padding: 8px 0;
+  font-weight: normal;
+}
+
+.dialog .example-card mat-card-subtitle:nth-child(1) {
+  border-top: 0;
+}
+
+.dialog .example-card mat-card-subtitle span {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.dialog .example-card mat-card-subtitle span span {
+  color: #fff;
+}
+
+.example-card img {
+  width: 60px;
+  margin: 5px 15px;
+  border: solid 1px #c3c1c1;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+}
+
+.poup-form {
+  padding: 20px 30px;
+}
+
+.poup-form {
+  margin-bottom: 15px;
+}
+
+.footer-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-top: solid 1px #d3d3d3;
+  padding: 10px 15px;
+}
+
+.footer-btn button {
+  width: 48% !important;
+  cursor: pointer;
+}
+
+.footer-btn button:nth-child(1) {
+  background: #dcdcdc !important;
+  color: #000;
+}
+
+.dialog .example-card mat-card-subtitle {
+  border-top: dashed 1px #a5a5a5;
+  padding: 8px 0;
+  font-weight: normal;
+}
+
+.dialog .example-card mat-card-subtitle:nth-child(1) {
+  border-top: 0;
+}
+
+.dialog .example-card mat-card-subtitle span {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  text-transform: capitalize;
+}
+
+
+.green-snackbar {
+  background: #fff;
+  color: solid 4px green !important;
+  border-radius: 0 !important;
+  border-left: solid 4px green !important;
+}
+
+.green-snackbar::after {
+//   background-image: url(./assets/snack1.jpeg);
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  top: 11px;
+  left: 6px;
+}
+
+.green-snackbar .mat-simple-snack-bar-content {
+  margin-left: 22px;
+}
+
+.green-snackbar button {
+  background-color: green;
+  border: none;
+  height: 25px;
+  line-height: 20px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 10px #b5b5b5;
+  box-shadow: 0px 0px 10px #b5b5b5;
+}
+
+.green-snackbar button .mat-mdc-snack-bar-label {
+  color: green !important;
+  margin-left: 13px;
+}
+
+.green-snackbar .mat-mdc-snack-bar-label {
+  color: green !important;
+  margin-left: 13px;
+}
+
+.green-snackbar span {
+  color: white;
+}
+
+.mat-mdc-snack-bar-container {
+
+  --mdc-snackbar-container-color: white;
+  --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+}
+
+.red-snackbar {
+  background: #fff;
+  color: #161616;
+  border-radius: 0 !important;
+  border-left: solid 4px #f44336 !important;
+}
+
+.red-snackbar .mat-mdc-snack-bar-label {
+  color: #f44336 !important;
+  margin-left: 13px;
+}
+
+.red-snackbar::after {
+//   background-image: url(./assets/snack2.jpeg);
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  top: 11px;
+  left: 6px;
+}
+
+.red-snackbar .mat-simple-snack-bar-content {
+  margin-left: 22px;
+}
+
+.red-snackbar button {
+  background-color: #f44336;
+  border: none;
+  height: 25px;
+  line-height: 20px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 10px #b5b5b5;
+  box-shadow: 0px 0px 10px #b5b5b5;
+}
+
+.red-snackbar button span {
+  color: white;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 25px;
+
+}
+
+/* mat-form-field{
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+.mat-form-field-wrapper {
+    padding-bottom: 0rem !important;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+ .mat-form-field-flex > .mat-form-field-infix { padding: 0.1em 0px !important;}
+.mat-form-field-label-wrapper { top: -1.5em; }
+
+ .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+} */
+
+
+/* .mat-form-field-appearance-outline .mat-form-field-outline {
+    background: #ffffff;
+    box-shadow: $box-shadow;
+    border-radius: 25px !important;
+  } */
+
+.mat-mdc-form-field-appearance-outline .mat-form-field-infix {
+  padding: 8px 8px 10px 8px;
+  border-top: 6px solid transparent;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-label {
+  margin-top: -0.5em;
+  font-size: 12px;
+}
+
+.mat-form-field-label-wrapper {
+  overflow: inherit !important;
+  top: -0.5em;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-1em) scale(0.75);
+  width: 133.3333333333%;
+}
+
+.mat-form-field-prefix .mat-icon-button,
+.mat-form-field-suffix .mat-icon-button {
+  width: 2em !important;
+  height: 2em !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-prefix,
+.mat-form-field-appearance-outline .mat-form-field-suffix {
+  top: 0.35em;
+}
+
+.mat-input-element {
+  font-size: 13px !important;
+}
+
+/* mat-form-field.mat-focused .mat-form-field-ripple{
+  background-color: var(--greenColor) !important;
+} */
+
+
+
+
+/* .mat-mdc-text-field-wrapper{
+  height: 50px !important;
+} */
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline_leading {
+  border-color: var(--mdc-theme-primary, #1de63f) !important;
+}
+
+
+/* new styles */
+.mat-drawer.mat-drawer-side {
+  width: 220px;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+a.mdc-list-item {
+  .mat-icon {
+    color: $black-color;
+  }
+
+  span.a {
+    color: $black-color;
+  }
+
+  &:hover {
+    background-color: $primarycolor;
+    color: #fff;
+
+    .mat-icon {
+      color: #fff;
+    }
+
+    span.a {
+      color: #fff;
+    }
+  }
+}
+
+.butn {
+  background-color: $primarycolor !important;
+}
+
+.butn-no{
+  background-color: $white-color !important;
+}
+
+.mat-drawer-inner-container {
+  background-color: $white-color;
+}
+
+.mat-mdc-slide-toggle .mdc-switch.mdc-switch--selected:enabled:hover:not(:focus):not(:active) .mdc-switch__handle::after {
+  background: $primarycolor !important;
+}
+
+.mat-mdc-slide-toggle .mdc-switch.mdc-switch--selected:enabled .mdc-switch__handle::after {
+  background: $primarycolor !important;
+}
+
+.mat-mdc-slide-toggle .mdc-switch:enabled .mdc-switch__track::after {
+  background: #8466f5 !important;
+}
+
+.dialog .head h3,
+.dialog .head .h3 {
+  color: $white-color !important;
+}
+
+
+.table-wrapper {
+  max-height: calc(100vh - 228px);
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+/* .table-wrapper::-webkit-scrollbar {
+  display: none;
+} */
+
+.mat-header-row,
+.mat-footer-row {
+  position: sticky;
+  top: 0;
+  background-color: #f2f2f2;
+  z-index: 1;
+}
+
+.at-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $primarycolor;
+  color: $white-color;
+  border: none;
+}
+
+/* Optional: Adjust the z-index to avoid overlapping with other elements */
+.mat-footer-row {
+  z-index: 2;
+}
+
+/* Ensure the footer stays at the bottom of the table */
+.mat-footer-row {
+  position: sticky;
+  bottom: 0;
+}
+
+/* Optional: Add borders for aesthetics */
+.mat-header-row,
+.mat-footer-row,
+.mat-row {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Optional: Increase padding for better spacing */
+.mat-cell,
+.mat-header-cell,
+.mat-footer-cell {
+  padding: 10px;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  padding-top: 8px !important;
+  padding-bottom: 13px !important;
+}
+
+.mat-mdc-form-field-infix {
+  min-height: 42px !important;
+}
+
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+  top: 22px !important;
+}
+
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+  border-top-left-radius: var(--mdc-shape-small, 25px) !important;
+  border-bottom-left-radius: var(--mdc-shape-small, 25px) !important;
+}
+
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+
+  border-top-right-radius: var(--mdc-shape-small, 15px) !important;
+  border-bottom-right-radius: var(--mdc-shape-small, 15px) !important;
+
+}
+
+.mat-drawer-container {
+  background-color: #f9f7ff !important;
+}
+
+.mat-drawer-side span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+a.mdc-list-item span.a {
+  font-size: 1rem;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  height: 44px;
+}
+
+.mat-mdc-menu-panel.mat-mdc-menu-panel {
+  border-radius: 20px;
+}
+
+.material-icons {}
+
+.mrgn-btm-40 {
+  margin-bottom: 40px !important;
+}
+
+.form-check-input:checked {
+  background-color: $primarycolor;
+  border-color: $primarycolor;
+}
+
+.fury-page-layout-content {
+  height: calc(100vh - 150px);
+}
+
+.mat-drawer-content {
+  height: 100vh;
+}
+
+.profile-img-pic {
+  background-color: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 180px;
+  height: 168px;
+}
+
+.delete-button {
+  border: 1px solid red !important;
+  padding: 5px 10px !important;
+  display: flex !important;
+  margin-top: 20px !important;
+  background-color: transparent !important;
+  color: red !important;
+  border-radius: 5px !important;
+  letter-spacing: 0;
+}
+
+.form-left-right{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.count-label{    
+  font-size: 12px;
+  display: block;
+  margin-left: 100px;
+}
+
+.mat-drawer-content {
+  overflow: hidden !important;
+}
+
+.active-list-item {
+  background-color: $primarycolor !important; /* Note: You could also use a custom theme */
+  color: #fff;
+}
+.active-list-item .mat-icon,  .active-list-item .a,.active-sub-list-item .mat-icon , .active-sub-list-item .a{
+  color: #fff !important;
+}
+
+.active-sub-list-item{
+  background-color: $primarycolor !important; /* Note: You could also use a custom theme */
+  color: #fff;
+}
+
+.mat-sort-header-content{
+  text-align: left !important;
+}

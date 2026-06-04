@@ -1,0 +1,62 @@
+
+<!-- MAIN CONTENT -->
+
+<div class="row p-2 mt-2">
+
+  <!-- MAP -->
+
+  <div class="col-md-7">
+    <div class="card right-card">
+           <!-- SEARCH + FILTER -->
+
+    <div class="row">
+
+    <div class="col-md-6">
+
+        <mat-form-field appearance="outline" class="w-100">
+
+        <mat-label>Search Callsign</mat-label>
+
+        <input matInput [formControl]="searchControl" placeholder="Search by Callsign">
+
+        <mat-icon matSuffix>search</mat-icon>
+
+        </mat-form-field>
+
+    </div>
+
+    <div class="col-md-2 d-flex  justify-content-start">
+
+        <button
+        mat-mini-fab
+        color="primary"
+        (click)="openFilterDialog()">
+
+        <mat-icon>filter_list</mat-icon>
+
+        </button>
+
+    </div>
+
+    </div>
+
+    <div class="layout card">
+
+      <div id="map"></div>
+
+    </div>
+
+  </div>
+
+    </div>
+ 
+  <!-- FLIGHT DETAILS -->
+
+  <div class="col-md-5">
+    <div class="m-2">
+        <app-kpi-cards [kpiData]="kpiData"></app-kpi-cards>
+        <app-flight-panel-details [flight]="selectedFlight"></app-flight-panel-details>
+    </div>
+  </div>
+
+</div>

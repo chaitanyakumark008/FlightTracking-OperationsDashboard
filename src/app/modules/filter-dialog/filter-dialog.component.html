@@ -1,0 +1,80 @@
+<h2 mat-dialog-title>Filter Flights</h2>
+
+<div mat-dialog-content [formGroup]="filterForm">
+
+  <!-- Status -->
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Status</mat-label>
+
+    <mat-select formControlName="status">
+      <mat-option value="">All</mat-option>
+      <mat-option value="Active">Active</mat-option>
+      <mat-option value="Delayed">Delayed</mat-option>
+      <mat-option value="Arrived">Arrived</mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+  <!-- Origin -->
+
+  <mat-form-field appearance="outline" class="w-100">
+
+    <mat-label>Origin Airport</mat-label>
+
+    <mat-select formControlName="origin">
+
+      <mat-option value="">All</mat-option>
+
+      <mat-option
+        *ngFor="let origin of origins"
+        [value]="origin">
+
+        {{ origin }}
+
+      </mat-option>
+
+    </mat-select>
+
+  </mat-form-field>
+
+  <!-- Destination -->
+
+  <mat-form-field appearance="outline" class="w-100">
+
+    <mat-label>Destination Airport</mat-label>
+
+    <mat-select formControlName="destination">
+
+      <mat-option value="">All</mat-option>
+
+      <mat-option
+        *ngFor="let destination of destinations"
+        [value]="destination">
+
+        {{ destination }}
+
+      </mat-option>
+
+    </mat-select>
+
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions align="end">
+
+  <button mat-button (click)="close()">
+    Cancel
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="applyFilters()">
+
+    Apply
+
+  </button>
+
+</div>

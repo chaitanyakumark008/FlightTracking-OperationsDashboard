@@ -7,10 +7,17 @@ const routes: Routes = [ {
     component: LayoutComponent,
      children:[
         { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-        { path: 'dashboard', loadChildren: () => import('./dashbard/dashbard.module').then(m => m.DashbardModule) },
-        { path: 'flights', loadChildren: () => import('./flights/flights.module').then(m => m.FlightsModule) }
+        { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+        { path: 'flights', loadChildren: () => import('./flights/flights.module').then(m => m.FlightsModule) },
+        { path: 'kpicards', loadChildren: () => import('./kpi-cards/kpi-cards.module').then(m => m.KpiCardsModule) },
+        { path: 'flightPanelDetails', loadChildren: () => import('./flight-panel-details/flight-panel-details.module').then(m => m.FlightPanelDetailsModule) },
+        { path: 'filters', loadChildren: () => import('./filter-dialog/filter-dialog.module').then(m => m.FilterDialogModule) },
+
      ]
-  }
+  },
+    
+
+    
 ]
 
 

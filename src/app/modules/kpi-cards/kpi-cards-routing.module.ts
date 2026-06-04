@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashbardComponent } from './dashbard.component';
+import { KpiCardsComponent } from './kpi-cards.component';
 
-const routes: Routes = [{ path: '', component: DashbardComponent }];
+const routes: Routes = [{ path: '', component: KpiCardsComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DashbardRoutingModule { }
+export class KpiCardsRoutingModule { }
