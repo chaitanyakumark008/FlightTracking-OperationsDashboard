@@ -23,11 +23,11 @@ export class FilterDialogComponent {
     this.origins = data.origins;
     this.destinations = data.destinations;
 
-    this.filterForm = this.fb.group({
-      status: [''],
-      origin: [''],
-      destination: ['']
-    });
+   this.filterForm = this.fb.group({
+  status: [data.filters?.status || ''],
+  origin: [data.filters?.origin || ''],
+  destination: [data.filters?.destination || '']
+});
   }
 
   applyFilters(): void {
@@ -37,4 +37,18 @@ export class FilterDialogComponent {
   close(): void {
     this.dialogRef.close();
   }
+  resetFilters(): void {
+
+  this.filterForm.reset({
+    status: '',
+    origin: '',
+    destination: ''
+  });
+
+  this.dialogRef.close({
+    status: '',
+    origin: '',
+    destination: ''
+  });
+}
 }

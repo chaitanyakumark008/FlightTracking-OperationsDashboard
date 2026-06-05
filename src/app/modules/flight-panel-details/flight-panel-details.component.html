@@ -1,8 +1,14 @@
-<div class="card p-3">
-
-  <div class="row mb-2">
-    <div class="col-md-6 fw-bold">
-      Flight Number
+<div class="card panel-card p-3 mt-2">
+    <div class="card-icon d-flex align-items-center">
+        <button mat-mini-fab color="primary"><mat-icon>assignment</mat-icon></button>
+         <span class="card-cont mx-2" >
+               Flight Details Panel
+        </span> 
+    </div>
+  <div class="row mb-2 mt-4">
+    <div *ngIf="!flight" class="no-flight">(Select a flight from the map to view its details)</div>
+    <div class="col-md-6">
+      Flight Number:
     </div>
     <div class="col-md-6">
       {{ flight?.flightNumber || 'NA' }}
@@ -10,8 +16,8 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-md-6 fw-bold">
-      Callsign
+    <div class="col-md-6">
+      Callsign:
     </div>
     <div class="col-md-6">
       {{ flight?.callsign || 'NA' }}
@@ -19,8 +25,8 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-md-6 fw-bold">
-      Aircraft Type
+    <div class="col-md-6">
+      Aircraft Type:
     </div>
     <div class="col-md-6">
       {{ flight?.aircraftType || 'NA' }}
@@ -28,8 +34,8 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-md-6 fw-bold">
-      Origin
+    <div class="col-md-6">
+      Origin:
     </div>
     <div class="col-md-6">
       {{ flight?.origin || 'NA' }}
@@ -37,8 +43,8 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-md-6 fw-bold">
-      Destination
+    <div class="col-md-6">
+      Destination:
     </div>
     <div class="col-md-6">
       {{ flight?.destination || 'NA' }}
@@ -46,8 +52,8 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-md-6 fw-bold">
-      Current Status
+    <div class="col-md-6">
+      Current Status:
     </div>
     <div class="col-md-6">
       {{ flight?.status || 'NA' }}
@@ -55,8 +61,8 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-md-6 fw-bold">
-      Estimated Departure Time
+    <div class="col-md-6">
+      Estimated Departure Time:
     </div>
     <div class="col-md-6">
       {{ flight?.etd || 'NA' }}
@@ -64,8 +70,8 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-md-6 fw-bold">
-      Estimated Arrival Time
+    <div class="col-md-6">
+      Estimated Arrival Time:
     </div>
     <div class="col-md-6">
       {{ flight?.eta || 'NA' }}

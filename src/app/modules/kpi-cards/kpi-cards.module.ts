@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { KpiCardsRoutingModule } from './kpi-cards-routing.module';
 import { KpiCardsComponent } from './kpi-cards.component';
+import { MaterialModule } from 'src/app/material.module';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { KpiCardsComponent } from './kpi-cards.component';
   ],
   imports: [
     CommonModule,
-    KpiCardsRoutingModule
+    KpiCardsRoutingModule,MaterialModule
   ],
    exports: [
     KpiCardsComponent

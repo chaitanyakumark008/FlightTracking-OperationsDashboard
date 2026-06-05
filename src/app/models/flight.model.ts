@@ -20,4 +20,6 @@ export interface Flight {
 
   etd: string;
   eta: string;
+  actualDepartureTime: string;
+  actualArrivalTime: string;
 }

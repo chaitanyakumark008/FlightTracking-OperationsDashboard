@@ -1,0 +1,71 @@
+@import "../../../../variable";
+.table-container {
+  width: 100%;
+}
+
+.search-box {
+  width: 100%;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;   /*horizontal scroll */
+}
+
+/* INNER VERTICAL SCROLL */
+.table-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+
+table {
+  width: 100%;
+  min-width: 700px;   /* prevents column collapse */
+}
+
+th.mat-header-cell {
+  position: sticky;
+  top: 0;
+  background: $white-color;
+  z-index: 10;
+}
+
+
+@media (max-width: 768px) {
+  .table-scroll {
+    max-height: 300px;
+  }
+
+  table {
+    min-width: 900px; /* better scroll on mobile */
+  }
+}
+
+.search-row {
+  display: flex;
+  padding: 8px 12px;
+}
+
+.search-col {
+  width: 40%;
+}
+
+@media (max-width: 768px) {
+  .search-col {
+    width: 100%;
+  }
+}
+
+.th-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.th-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: $primarycolor;
+}

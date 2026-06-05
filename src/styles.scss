@@ -1,7 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "./variable";
-// @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./variablecopy";
 
 html,
@@ -112,102 +109,6 @@ body {
   cursor: pointer;
 }
 
-.dialog .example-card {
-  padding: 15px;
-  max-height: 70vh;
-  overflow: auto;
-  border: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.dialog .example-card mat-card-title {
-  margin-bottom: 10px;
-  text-transform: capitalize;
-  color: $primarycolor;
-  font-size: 18px;
-}
-
-.dialog .example-card mat-card-subtitle {
-  border-top: dashed 1px #a5a5a5;
-  padding: 8px 0;
-  font-weight: normal;
-}
-
-.dialog .example-card mat-card-subtitle:nth-child(1) {
-  border-top: 0;
-}
-
-.dialog .example-card mat-card-subtitle span {
-  font-size: 13px;
-  font-weight: bold;
-  color: #000;
-  text-transform: capitalize;
-}
-
-.dialog .example-card mat-card-subtitle span span {
-  color: #fff;
-}
-
-.example-card img {
-  width: 60px;
-  margin: 5px 15px;
-  border: solid 1px #c3c1c1;
-  padding: 5px;
-  border-radius: 5px;
-  display: block;
-}
-
-.poup-form {
-  padding: 20px 30px;
-}
-
-.poup-form {
-  margin-bottom: 15px;
-}
-
-.footer-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  border-top: solid 1px #d3d3d3;
-  padding: 10px 15px;
-}
-
-.footer-btn button {
-  width: 48% !important;
-  cursor: pointer;
-}
-
-.footer-btn button:nth-child(1) {
-  background: #dcdcdc !important;
-  color: #000;
-}
-
-.dialog .example-card mat-card-subtitle {
-  border-top: dashed 1px #a5a5a5;
-  padding: 8px 0;
-  font-weight: normal;
-}
-
-.dialog .example-card mat-card-subtitle:nth-child(1) {
-  border-top: 0;
-}
-
-.dialog .example-card mat-card-subtitle span {
-  font-size: 13px;
-  font-weight: bold;
-  color: #000;
-  text-transform: capitalize;
-}
-
 
 .green-snackbar {
   background: #fff;
@@ -304,35 +205,10 @@ body {
 
 mat-form-field {
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 
 }
 
-/* mat-form-field{
-    width: 100%;
-    margin-bottom: 15px;
-
-}
-.mat-form-field-wrapper {
-    padding-bottom: 0rem !important;
-  }
-  .mat-form-field {
-    width: 100%;
-  }
- .mat-form-field-flex > .mat-form-field-infix { padding: 0.1em 0px !important;}
-.mat-form-field-label-wrapper { top: -1.5em; }
-
- .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-    transform: translateY(-1.1em) scale(.75);
-    width: 133.33333%;
-} */
-
-
-/* .mat-form-field-appearance-outline .mat-form-field-outline {
-    background: #ffffff;
-    box-shadow: $box-shadow;
-    border-radius: 25px !important;
-  } */
 
 .mat-mdc-form-field-appearance-outline .mat-form-field-infix {
   padding: 8px 8px 10px 8px;
@@ -369,21 +245,6 @@ mat-form-field {
 .mat-input-element {
   font-size: 13px !important;
 }
-
-/* mat-form-field.mat-focused .mat-form-field-ripple{
-  background-color: var(--greenColor) !important;
-} */
-
-
-
-
-/* .mat-mdc-text-field-wrapper{
-  height: 50px !important;
-} */
-.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline_leading {
-  border-color: var(--mdc-theme-primary, #1de63f) !important;
-}
-
 
 /* new styles */
 .mat-drawer.mat-drawer-side {
@@ -543,8 +404,6 @@ a.mdc-list-item span.a {
   border-radius: 20px;
 }
 
-.material-icons {}
-
 .mrgn-btm-40 {
   margin-bottom: 40px !important;
 }
@@ -554,51 +413,15 @@ a.mdc-list-item span.a {
   border-color: $primarycolor;
 }
 
-.fury-page-layout-content {
-  height: calc(100vh - 150px);
-}
+
 
 .mat-drawer-content {
   height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-
-.profile-img-pic {
-  background-color: white;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 180px;
-  height: 168px;
-}
-
-.delete-button {
-  border: 1px solid red !important;
-  padding: 5px 10px !important;
-  display: flex !important;
-  margin-top: 20px !important;
-  background-color: transparent !important;
-  color: red !important;
-  border-radius: 5px !important;
-  letter-spacing: 0;
-}
-
-.form-left-right{
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.count-label{    
-  font-size: 12px;
-  display: block;
-  margin-left: 100px;
-}
-
-.mat-drawer-content {
-  overflow: hidden !important;
-}
-
 .active-list-item {
-  background-color: $primarycolor !important; /* Note: You could also use a custom theme */
+  background-color: $primarycolor !important;
   color: #fff;
 }
 .active-list-item .mat-icon,  .active-list-item .a,.active-sub-list-item .mat-icon , .active-sub-list-item .a{
@@ -606,10 +429,7 @@ a.mdc-list-item span.a {
 }
 
 .active-sub-list-item{
-  background-color: $primarycolor !important; /* Note: You could also use a custom theme */
+  background-color: $primarycolor !important;
   color: #fff;
 }
 
-.mat-sort-header-content{
-  text-align: left !important;
-}

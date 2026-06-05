@@ -1,0 +1,10 @@
+@import "../../../variable";
+.panel-card{
+    background: linear-gradient(135deg,#5f2c82 0%,#49a09d 100%) !important;
+    padding: 10px;
+    color: $white-color;
+}
+.no-flight{
+    font-size: $font-size-small;
+    color: $black-color;
+}

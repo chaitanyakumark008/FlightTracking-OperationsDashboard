@@ -9,6 +9,7 @@ import { FlightPanelDetailsModule } from '../flight-panel-details/flight-panel-d
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
 import { FilterDialogModule } from '../filter-dialog/filter-dialog.module';
+import { ChartViewModule } from '../chart-view/chart-view.module';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { FilterDialogModule } from '../filter-dialog/filter-dialog.module';
     DashboardRoutingModule,
     KpiCardsModule,
     FlightPanelDetailsModule,
-    FormsModule,ReactiveFormsModule,MaterialModule, FilterDialogModule
+    FormsModule,ReactiveFormsModule,MaterialModule, FilterDialogModule, ChartViewModule
   ]
 })
 export class DashboardModule { }

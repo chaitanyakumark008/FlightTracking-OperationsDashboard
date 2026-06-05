@@ -1,17 +1,56 @@
-
 <div class="row">
-    <div class="col"> 
-        <div class="card kpi-card">Total Flights: {{ kpiData?.totalFlights }}</div>
+    <div class="col">
+        <div class="card kpi-card" (click)="goToFlights()">
+            <div class="card-icon">
+                <button mat-mini-fab color="primary"><mat-icon>connecting_airports</mat-icon></button>
+            </div>
+            <div class="card-cont">
+                Total Flights
+            </div>
+            <div align="right">
+                <span class="card-count">{{ kpiData?.totalFlights }}</span>
+            </div>
+        </div>
     </div>
     <div class="col">
-        <div class="card">Active Flights: {{ kpiData?.activeFlights }}</div>
+        <div class="card kpi-card" (click)="goToRoutes()">
+            <div class="card-icon">
+                <button mat-mini-fab color="primary"><mat-icon>flight</mat-icon></button>
+            </div>
+            <div class="card-cont">
+                Active Flights
+            </div>
+            <div align="right">
+                <span class="card-count">{{ kpiData?.activeFlights }}</span>
+            </div>
+        </div>
     </div>
 </div>
-<div class="row">
-      <div class="col">
-        <div class="card">Delayed Flights: {{ kpiData?.delayedFlights }}</div>
+<div class="row mt-2">
+    <div class="col">
+        <div class="card kpi-card" (click)="goToRoutes()">
+            <div class="card-icon">
+                <button mat-mini-fab color="primary"><mat-icon>schedule</mat-icon></button>
+            </div>
+            <div class="card-cont">
+                Delayed Flights
+            </div>
+            <div align="right">
+                <span class="card-count">{{ kpiData?.activeFlights }}</span>
+            </div>
+        </div>
     </div>
     <div class="col">
-        <div class="card">Arrived Flights: {{ kpiData?.arrivedFlights }}</div>
+        <div class="card kpi-card" (click)="goToRoutes()">
+            <div class="card-icon">
+                <button mat-mini-fab color="primary"><mat-icon>flight_land</mat-icon></button>
+            </div>
+            <div class="card-cont">
+                Arrived Flights
+            </div>
+            <div align="right">
+                <span class="card-count">{{ kpiData?.arrivedFlights }}</span>
+            </div>
+        </div>
     </div>
 </div>

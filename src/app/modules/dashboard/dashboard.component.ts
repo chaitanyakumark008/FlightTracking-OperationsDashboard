@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, AfterViewChecked } from '@angular/core';
 import * as L from 'leaflet';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -21,17 +21,28 @@ L.Icon.Default.mergeOptions({
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   map!: L.Map;
-
+  currentFilters = {
+    status: '',
+    origin: '',
+    destination: ''
+  };
   allFlights: Flight[] = [];
   flights: Flight[] = [];
-
   selectedFlight?: Flight;
-
   routeLine?: L.Polyline;
-
+  originMarker?: L.Marker;
+  destinationMarker?: L.Marker;
+  airportIcon = L.icon({
+    iconUrl: 'assets/marker-icon-2x.png',
+    iconRetinaUrl: 'assets/marker-icon-2x.png',
+    shadowUrl: 'assets/marker-shadow.png',
+    iconSize: [32, 52],
+    iconAnchor: [16, 52],
+    popupAnchor: [0, -45]
+  });
   searchControl = new FormControl('');
 
   kpiData = {
@@ -44,7 +55,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   constructor(
     private flightService: FlightService,
     private dialog: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
 
@@ -81,7 +92,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     L.tileLayer(
       'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        attribution: '© OpenStreetMap'
+        attribution: ''
       }
     ).addTo(this.map);
 
@@ -124,22 +135,53 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
     this.selectedFlight = flight;
 
+    // Remove previous route
     if (this.routeLine) {
       this.map.removeLayer(this.routeLine);
     }
 
+    // Remove old markers
+    if (this.originMarker) {
+      this.map.removeLayer(this.originMarker);
+    }
+
+    if (this.destinationMarker) {
+      this.map.removeLayer(this.destinationMarker);
+    }
+
+    // Source Marker
+    this.originMarker = L.marker(
+      [flight.originLat, flight.originLng],
+      { icon: this.airportIcon }
+    )
+      .addTo(this.map)
+      .bindPopup(`Origin: ${flight.origin}`);
+
+    // Destination Marker
+    this.destinationMarker = L.marker(
+      [flight.destinationLat, flight.destinationLng],
+      { icon: this.airportIcon }
+    )
+      .addTo(this.map)
+      .bindPopup(`Destination: ${flight.destination}`);
+
+    // Dashed route line
     this.routeLine = L.polyline(
       [
         [flight.originLat, flight.originLng],
+        [flight.currentLat, flight.currentLng],
         [flight.destinationLat, flight.destinationLng]
       ],
       {
-        color: 'blue',
-        weight: 4
+        color: '#1976d2',
+        weight: 4,
+        dashArray: '10, 10'   // <-- dashed line
       }
     ).addTo(this.map);
 
-    this.map.fitBounds(this.routeLine.getBounds());
+    this.map.fitBounds(this.routeLine.getBounds(), {
+      padding: [40, 40]
+    });
   }
 
   searchFlights(searchText: string): void {
@@ -154,37 +196,76 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.refreshMap();
   }
 
-openFilterDialog(): void {
+  openFilterDialog(): void {
 
-  const origins = [
-    ...new Set(this.allFlights.map(f => f.origin))
-  ];
+    const origins = [
+      ...new Set(this.allFlights.map(f => f.origin))
+    ];
 
-  const destinations = [
-    ...new Set(this.allFlights.map(f => f.destination))
-  ];
+    const destinations = [
+      ...new Set(this.allFlights.map(f => f.destination))
+    ];
 
-  const dialogRef = this.dialog.open(
-    FilterDialogComponent,
-    {
-      width: '500px',
-      data: {
-        origins,
-        destinations
+    const dialogRef = this.dialog.open(
+      FilterDialogComponent,
+      {
+        width: '500px',
+        data: {
+          origins,
+          destinations,
+          filters: this.currentFilters
+        }
       }
-    }
-  );
+    );
 
-  dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(result => {
 
-    if (!result) {
-      return;
-    }
+      if (!result) {
+        return;
+      }
 
-    this.applyFilters(result);
+      const filteredFlights = this.allFlights.filter(f => {
 
-  });
-}
+        const statusMatch =
+          !result.status || f.status === result.status;
+
+        const originMatch =
+          !result.origin || f.origin === result.origin;
+
+        const destinationMatch =
+          !result.destination || f.destination === result.destination;
+
+        return (
+          statusMatch &&
+          originMatch &&
+          destinationMatch
+        );
+      });
+
+      // No records found
+      if (filteredFlights.length === 0) {
+
+        alert('No flights found for the selected filters.');
+
+        this.currentFilters = {
+          status: '',
+          origin: '',
+          destination: ''
+        };
+
+        this.flights = [...this.allFlights];
+
+        this.refreshMap();
+
+        return;
+      }
+
+      // Records found
+      this.currentFilters = result;
+      this.applyFilters(result);
+
+    });
+  }
 
   applyFilters(filters: any): void {
 
@@ -240,7 +321,7 @@ openFilterDialog(): void {
     L.tileLayer(
       'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        attribution: '© OpenStreetMap'
+        attribution: 'Map'
       }
     ).addTo(this.map);
 
@@ -250,18 +331,28 @@ openFilterDialog(): void {
   calculateKPIs(): void {
 
     this.kpiData = {
-      totalFlights: this.flights.length,
-      activeFlights: this.flights.filter(
+      totalFlights: this.allFlights.length,
+
+      activeFlights: this.allFlights.filter(
         f => f.status === 'Active'
       ).length,
 
-      delayedFlights: this.flights.filter(
+      delayedFlights: this.allFlights.filter(
         f => f.status === 'Delayed'
       ).length,
 
-      arrivedFlights: this.flights.filter(
+      arrivedFlights: this.allFlights.filter(
         f => f.status === 'Arrived'
       ).length
     };
   }
+
+  ngAfterViewChecked(): void {
+    if (this.map) {
+      setTimeout(() => {
+        this.map.invalidateSize();
+      });
+    }
+  }
 }
+

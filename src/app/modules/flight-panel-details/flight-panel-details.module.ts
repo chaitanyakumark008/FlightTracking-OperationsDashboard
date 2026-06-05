@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FlightPanelDetailsRoutingModule } from './flight-panel-details-routing.module';
 import { FlightPanelDetailsComponent } from './flight-panel-details.component';
+import { MaterialModule } from 'src/app/material.module';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { FlightPanelDetailsComponent } from './flight-panel-details.component';
   ],
   imports: [
     CommonModule,
-    FlightPanelDetailsRoutingModule
+    FlightPanelDetailsRoutingModule,MaterialModule
   ],
    exports: [
     FlightPanelDetailsComponent

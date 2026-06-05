@@ -14,7 +14,9 @@
     "currentLng": 75.2,
     "status": "Active",
     "etd": "08:00",
-    "eta": "10:15"
+    "eta": "10:15",
+    "actualDepartureTime": "08:00",
+    "actualArrivalTime": null
   },
   {
     "id": 2,
@@ -31,7 +33,9 @@
     "currentLng": 75.0,
     "status": "Active",
     "etd": "09:10",
-    "eta": "11:05"
+    "eta": "11:05",
+    "actualDepartureTime": "09:10",
+    "actualArrivalTime": null
   },
   {
     "id": 3,
@@ -48,7 +52,9 @@
     "currentLng": 77.8,
     "status": "Delayed",
     "etd": "07:30",
-    "eta": "09:40"
+    "eta": "09:40",
+    "actualDepartureTime": "07:55",
+    "actualArrivalTime": null
   },
   {
     "id": 4,
@@ -65,7 +71,9 @@
     "currentLng": 77.0,
     "status": "Active",
     "etd": "06:45",
-    "eta": "09:15"
+    "eta": "09:15",
+    "actualDepartureTime": "06:45",
+    "actualArrivalTime": null
   },
   {
     "id": 5,
@@ -82,7 +90,9 @@
     "currentLng": 80.0,
     "status": "Active",
     "etd": "10:00",
-    "eta": "12:30"
+    "eta": "12:30",
+    "actualDepartureTime": "10:00",
+    "actualArrivalTime": null
   },
   {
     "id": 6,
@@ -99,7 +109,9 @@
     "currentLng": 75.5,
     "status": "Arrived",
     "etd": "05:50",
-    "eta": "07:30"
+    "eta": "07:30",
+    "actualDepartureTime": "05:50",
+    "actualArrivalTime": "07:38"
   },
   {
     "id": 7,
@@ -116,7 +128,9 @@
     "currentLng": 82.0,
     "status": "Active",
     "etd": "11:15",
-    "eta": "13:40"
+    "eta": "13:40",
+    "actualDepartureTime": "11:15",
+    "actualArrivalTime": null
   },
   {
     "id": 8,
@@ -133,7 +147,9 @@
     "currentLng": 78.0,
     "status": "Delayed",
     "etd": "09:00",
-    "eta": "11:50"
+    "eta": "11:50",
+    "actualDepartureTime": "09:40",
+    "actualArrivalTime": null
   },
   {
     "id": 9,
@@ -150,7 +166,9 @@
     "currentLng": 77.3,
     "status": "Active",
     "etd": "12:00",
-    "eta": "14:20"
+    "eta": "14:20",
+    "actualDepartureTime": "12:00",
+    "actualArrivalTime": null
   },
   {
     "id": 10,
@@ -167,24 +185,28 @@
     "currentLng": 78.0,
     "status": "Active",
     "etd": "13:30",
-    "eta": "15:10"
+    "eta": "15:10",
+    "actualDepartureTime": "13:30",
+    "actualArrivalTime": null
   },
   {
     "id": 11,
     "flightNumber": "AI301",
     "callsign": "AIRINDIA301",
-    "aircraftType": "B787",
+    "aircraftType": "A320",
     "origin": "DEL",
-    "destination": "DXB",
+    "destination": "VTZ",
     "originLat": 28.5562,
     "originLng": 77.1000,
-    "destinationLat": 25.2532,
-    "destinationLng": 55.3657,
-    "currentLat": 27.0,
-    "currentLng": 68.0,
+    "destinationLat": 17.7219,
+    "destinationLng": 83.2245,
+    "currentLat": 23.5,
+    "currentLng": 80.5,
     "status": "Active",
     "etd": "14:00",
-    "eta": "17:15"
+    "eta": "16:00",
+    "actualDepartureTime": "14:00",
+    "actualArrivalTime": null
   },
   {
     "id": 12,
@@ -192,66 +214,131 @@
     "callsign": "INDIGO4501",
     "aircraftType": "A321neo",
     "origin": "HYD",
-    "destination": "SIN",
+    "destination": "MAA",
     "originLat": 17.2403,
     "originLng": 78.4294,
-    "destinationLat": 1.3644,
-    "destinationLng": 103.9915,
-    "currentLat": 10.5,
-    "currentLng": 91.0,
+    "destinationLat": 12.9941,
+    "destinationLng": 80.1709,
+    "currentLat": 15.5,
+    "currentLng": 79.1,
     "status": "Active",
     "etd": "09:30",
-    "eta": "16:20"
+    "eta": "10:45",
+    "actualDepartureTime": "09:30",
+    "actualArrivalTime": null
   },
   {
     "id": 13,
     "flightNumber": "AI155",
     "callsign": "AIRINDIA155",
-    "aircraftType": "B777",
+    "aircraftType": "A320",
     "origin": "BOM",
-    "destination": "LHR",
+    "destination": "COK",
     "originLat": 19.0896,
     "originLng": 72.8656,
-    "destinationLat": 51.4700,
-    "destinationLng": -0.4543,
-    "currentLat": 35.0,
-    "currentLng": 40.0,
+    "destinationLat": 10.1520,
+    "destinationLng": 76.4019,
+    "currentLat": 14.5,
+    "currentLng": 74.5,
     "status": "Active",
     "etd": "02:00",
-    "eta": "09:30"
+    "eta": "04:15",
+    "actualDepartureTime": "02:00",
+    "actualArrivalTime": null
   },
   {
     "id": 14,
     "flightNumber": "AI188",
     "callsign": "AIRINDIA188",
-    "aircraftType": "B787",
+    "aircraftType": "A321",
     "origin": "DEL",
-    "destination": "YYZ",
+    "destination": "AMD",
     "originLat": 28.5562,
     "originLng": 77.1000,
-    "destinationLat": 43.6777,
-    "destinationLng": -79.6248,
-    "currentLat": 55.0,
-    "currentLng": -20.0,
+    "destinationLat": 23.0732,
+    "destinationLng": 72.6347,
+    "currentLat": 25.5,
+    "currentLng": 74.8,
     "status": "Delayed",
     "etd": "01:00",
-    "eta": "13:45"
+    "eta": "02:45",
+    "actualDepartureTime": "01:20",
+    "actualArrivalTime": null
   },
   {
     "id": 15,
-    "flightNumber": "SQ403",
-    "callsign": "SINGAPORE403",
-    "aircraftType": "A350",
-    "origin": "SIN",
+    "flightNumber": "AI550",
+    "callsign": "AIRINDIA550",
+    "aircraftType": "A320",
+    "origin": "VTZ",
     "destination": "DEL",
-    "originLat": 1.3644,
-    "originLng": 103.9915,
+    "originLat": 17.7219,
+    "originLng": 83.2245,
     "destinationLat": 28.5562,
     "destinationLng": 77.1000,
-    "currentLat": 15.0,
-    "currentLng": 92.0,
+    "currentLat": 23.0,
+    "currentLng": 80.2,
     "status": "Arrived",
     "etd": "05:00",
-    "eta": "10:45"
-  }
+    "eta": "07:20",
+    "actualDepartureTime": "05:00",
+    "actualArrivalTime": "07:28"
+  },
+  {
+  "id": 16,
+  "flightNumber": "6E245",
+  "callsign": "IGO245",
+  "aircraftType": "A320",
+  "origin": "HYD",
+  "destination": "BOM",
+  "originLat": 17.2403,
+  "originLng": 78.4294,
+  "destinationLat": 19.0896,
+  "destinationLng": 72.8656,
+  "currentLat": 18.1,
+  "currentLng": 75.6,
+  "status": "En Route",
+  "etd": "08:15",
+  "eta": "09:45",
+  "actualDepartureTime": "08:18",
+  "actualArrivalTime": null
+},
+{
+  "id": 17,
+  "flightNumber": "UK878",
+  "callsign": "VISTARA878",
+  "aircraftType": "A321",
+  "origin": "BLR",
+  "destination": "CCU",
+  "originLat": 13.1986,
+  "originLng": 77.7066,
+  "destinationLat": 22.6547,
+  "destinationLng": 88.4467,
+  "currentLat": 18.4,
+  "currentLng": 83.1,
+  "status": "Delayed",
+  "etd": "14:20",
+  "eta": "16:50",
+  "actualDepartureTime": "14:45",
+  "actualArrivalTime": null
+},
+{
+  "id": 18,
+  "flightNumber": "AI471",
+  "callsign": "AIRINDIA471",
+  "aircraftType": "A320",
+  "origin": "VTZ",
+  "destination": "HYD",
+  "originLat": 17.7219,
+  "originLng": 83.2245,
+  "destinationLat": 17.2403,
+  "destinationLng": 78.4294,
+  "currentLat": 17.5,
+  "currentLng": 80.8,
+  "status": "Active",
+  "etd": "11:10",
+  "eta": "12:25",
+  "actualDepartureTime": "11:12",
+  "actualArrivalTime": null
+}
 ]

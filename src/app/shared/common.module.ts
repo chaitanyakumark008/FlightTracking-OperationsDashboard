@@ -5,6 +5,7 @@ import { MaterialModule } from '../material.module';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonTableComponent } from './components/common-table/common-table.component';
 
 
 
@@ -12,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     declarations: [
       SideNavComponent,
+      CommonTableComponent,
     ],
     imports: [
       CommonModule,MaterialModule,
@@ -20,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       ReactiveFormsModule
     ],
     exports:[
-      SideNavComponent,
+      SideNavComponent,CommonTableComponent
   ],
   })
 export class AppCommonModule { }

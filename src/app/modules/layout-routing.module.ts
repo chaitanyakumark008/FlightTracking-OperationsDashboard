@@ -12,9 +12,12 @@ const routes: Routes = [ {
         { path: 'kpicards', loadChildren: () => import('./kpi-cards/kpi-cards.module').then(m => m.KpiCardsModule) },
         { path: 'flightPanelDetails', loadChildren: () => import('./flight-panel-details/flight-panel-details.module').then(m => m.FlightPanelDetailsModule) },
         { path: 'filters', loadChildren: () => import('./filter-dialog/filter-dialog.module').then(m => m.FilterDialogModule) },
+        { path: 'routes', loadChildren: () => import('./routes/routes.module').then(m => m.RoutesModule) },
 
      ]
   },
+    { path: 'charts', loadChildren: () => import('./chart-view/chart-view.module').then(m => m.ChartViewModule) },
+
     
 
     

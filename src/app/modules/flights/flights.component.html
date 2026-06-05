@@ -1,1 +1,6 @@
-<p>flights works!</p>
+<app-common-table
+  [columns]="columns"
+  [data]="flights"
+  (rowClick)="onRowClick($event)"
+  (action)="onAction($event)">
+</app-common-table>
