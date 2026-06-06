@@ -3,7 +3,7 @@ git clone https://github.com/chaitanyakumark008/FlightTracking-OperationsDashboa
 
 2.Node.js (>= 18+ recommended) (if not installed) 
 
-3.Install Angular CLI (if not installed). below is the present version.
+3.Install Angular CLI (if not installed).
 npm install -g @angular/cli@16.2.16
 
 4.Open Command Prompt Go to the folder where your project is downloaded. (Or) 
