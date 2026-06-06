@@ -416,8 +416,11 @@ a.mdc-list-item span.a {
 
 
 .mat-drawer-content {
-  height: 100vh;
-  overflow-y: auto;
+  // height: 100vh;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+    min-height: 100vh;
+  height: auto;
   overflow-x: hidden;
 }
 .active-list-item {

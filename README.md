@@ -1,32 +1,26 @@
-<<<<<<< HEAD
-# FlightTracking
+1.Clone the repository from GitHub
+git clone https://github.com/chaitanyakumark008/FlightTracking-OperationsDashboard.git
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+2.Node.js (>= 18+ recommended) (if not installed) 
 
-## Development server
+3.Install Angular CLI (if not installed). below is the present version.
+npm install -g @angular/cli@16.2.16
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+4.Open Command Prompt Go to the folder where your project is downloaded. (Or) 
 
-## Code scaffolding
+*Open VS Code
+*Click on File → Open Folder
+*Select your project folder
+*Open terminal in VS Code
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+5.Install project dependencies
 
-## Build
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+6.Run the application in development mode
 
-## Running unit tests
+ng serve
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+6.Open the application in browser
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# FlightTracking-OperationsDashboard
-Task
->>>>>>> b08104e0394398978f45252c68116266ed17ebd4
+http://localhost:4200

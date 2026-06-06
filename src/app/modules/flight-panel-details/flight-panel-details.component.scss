@@ -1,10 +1,75 @@
 @import "../../../variable";
-.panel-card{
-    background: linear-gradient(135deg,#5f2c82 0%,#49a09d 100%) !important;
-    padding: 10px;
-    color: $white-color;
+
+.panel-card {
+  background: linear-gradient(135deg, #5f2c82 0%, #49a09d 100%) !important;
+  color: $white-color;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 200px;
 }
-.no-flight{
-    font-size: $font-size-small;
-    color: $black-color;
+
+.card-cont {
+  font-size: 1.1rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.detail-row {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.label {
+  font-weight: 600;
+}
+
+.value {
+  text-align: right;
+  word-break: break-word;
+}
+
+.no-flight {
+  font-size: $font-size-small;
+  color: $white-color;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .panel-card {
+    padding: 12px;
+  }
+
+  .card-cont {
+    font-size: 1rem;
+  }
+
+  .label,
+  .value {
+    font-size: 0.875rem;
+  }
+
+  .value {
+    text-align: left;
+  }
+
+  .detail-row {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-icon {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card-cont {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .label,
+  .value {
+    font-size: 0.8rem;
+  }
 }

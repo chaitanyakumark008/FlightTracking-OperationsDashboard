@@ -1,81 +1,56 @@
 <div class="card panel-card p-3 mt-2">
-    <div class="card-icon d-flex align-items-center">
-        <button mat-mini-fab color="primary"><mat-icon>assignment</mat-icon></button>
-         <span class="card-cont mx-2" >
-               Flight Details Panel
-        </span> 
-    </div>
-  <div class="row mb-2 mt-4">
-    <div *ngIf="!flight" class="no-flight">(Select a flight from the map to view its details)</div>
-    <div class="col-md-6">
-      Flight Number:
-    </div>
-    <div class="col-md-6">
-      {{ flight?.flightNumber || 'NA' }}
-    </div>
+  <div class="card-icon d-flex align-items-center flex-wrap">
+    <button mat-mini-fab color="primary">
+      <mat-icon>assignment</mat-icon>
+    </button>
+    <span class="card-cont ms-2">
+      Flight Details Panel
+    </span>
   </div>
 
-  <div class="row mb-2">
-    <div class="col-md-6">
-      Callsign:
-    </div>
-    <div class="col-md-6">
-      {{ flight?.callsign || 'NA' }}
-    </div>
+  <div *ngIf="!flight" class="no-flight mt-4 text-center">
+    (Select a flight from the map to view its details)
   </div>
 
-  <div class="row mb-2">
-    <div class="col-md-6">
-      Aircraft Type:
+  <div *ngIf="flight" class="mt-4">
+    <div class="row detail-row">
+      <div class="col-5 col-md-6 label">Flight Number:</div>
+      <div class="col-7 col-md-6 value">{{ flight?.flightNumber || 'NA' }}</div>
     </div>
-    <div class="col-md-6">
-      {{ flight?.aircraftType || 'NA' }}
+
+    <div class="row detail-row">
+      <div class="col-5 col-md-6 label">Callsign:</div>
+      <div class="col-7 col-md-6 value">{{ flight?.callsign || 'NA' }}</div>
+    </div>
+
+    <div class="row detail-row">
+      <div class="col-5 col-md-6 label">Aircraft Type:</div>
+      <div class="col-7 col-md-6 value">{{ flight?.aircraftType || 'NA' }}</div>
+    </div>
+
+    <div class="row detail-row">
+      <div class="col-5 col-md-6 label">Origin:</div>
+      <div class="col-7 col-md-6 value">{{ flight?.origin || 'NA' }}</div>
+    </div>
+
+    <div class="row detail-row">
+      <div class="col-5 col-md-6 label">Destination:</div>
+      <div class="col-7 col-md-6 value">{{ flight?.destination || 'NA' }}</div>
+    </div>
+
+    <div class="row detail-row">
+      <div class="col-5 col-md-6 label">Current Status:</div>
+      <div class="col-7 col-md-6 value">{{ flight?.status || 'NA' }}</div>
+    </div>
+
+    <div class="row detail-row">
+      <div class="col-5 col-md-6 label">Estimated Departure:</div>
+      <div class="col-7 col-md-6 value">{{ flight?.etd || 'NA' }}</div>
+    </div>
+
+    <div class="row detail-row">
+      <div class="col-5 col-md-6 label">Estimated Arrival:</div>
+      <div class="col-7 col-md-6 value">{{ flight?.eta || 'NA' }}</div>
     </div>
   </div>
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      Origin:
-    </div>
-    <div class="col-md-6">
-      {{ flight?.origin || 'NA' }}
-    </div>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      Destination:
-    </div>
-    <div class="col-md-6">
-      {{ flight?.destination || 'NA' }}
-    </div>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      Current Status:
-    </div>
-    <div class="col-md-6">
-      {{ flight?.status || 'NA' }}
-    </div>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      Estimated Departure Time:
-    </div>
-    <div class="col-md-6">
-      {{ flight?.etd || 'NA' }}
-    </div>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      Estimated Arrival Time:
-    </div>
-    <div class="col-md-6">
-      {{ flight?.eta || 'NA' }}
-    </div>
-  </div>
-
 </div>
