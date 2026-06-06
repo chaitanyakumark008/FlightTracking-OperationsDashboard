@@ -1,4 +1,4 @@
-1.Clone the repository from GitHub
+1.Clone the repository from GitHub: Open Command Prompt and select your folder and then type below command.
 git clone https://github.com/chaitanyakumark008/FlightTracking-OperationsDashboard.git
 
 2.Node.js (>= 18+ recommended) (if not installed) 
